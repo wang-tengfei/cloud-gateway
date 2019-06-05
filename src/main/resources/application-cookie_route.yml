@@ -1,0 +1,10 @@
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cookie_route
+          uri: http://httpbin.org:80/get
+          #请求带有cookie名为name, cookie值为forezp 的请求将都会转发到uri为 http://httpbin.org:80/get的地址上
+          predicates:
+          - Cookie=name, forezp
